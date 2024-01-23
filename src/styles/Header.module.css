@@ -1,0 +1,39 @@
+.header,
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  padding-block: 2rem 0;
+  padding-inline: 3rem;
+  font-family: var(--font-regular);
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.navList > li {
+  padding-inline: 0.5rem;
+}
+
+.home {
+  font-size: 48px;
+}
+
+.link {
+  font-size: 24px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .navList {
+    flex-direction: column;
+  }
+}
