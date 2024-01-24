@@ -7,7 +7,7 @@ export default function Header() {
     <header className={styles.header}>
       <h1>Next Demo App</h1>
       <nav className={styles.nav}>
-        <Link href="/" className={styles.home}>☯</Link>
+        <Link href="/" className={styles.home}>☥</Link>
         <br/><br/>
         <ul className={styles.navList}>
           <li><Link href="/users" className={styles.link}>/users</Link></li>

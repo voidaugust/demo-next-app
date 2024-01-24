@@ -1,13 +1,13 @@
+import Card from "@/components/Card"
 import { getUsers } from "@/pages/api/users"
-import styles from "@/styles/users.module.css"
 
 export const getStaticProps = async() => {
+  const pageTitle = "Users"
   const users = await getUsers()
-  return { 
-    props: { 
-      users
-    },
-  }
+  return { props: { 
+    pageTitle,
+    users
+  }}
 }
 
 export default function UsersPage({ users }) {
@@ -18,11 +18,11 @@ export default function UsersPage({ users }) {
         {
           users
             .map(user => (
-              <li key={user.id} className={styles.card}>
+              <Card key={user.id}>
                 <h2>{user.name}</h2>
                 <h3>{user.email}</h3>
                 <p>{user.phone}</p>
-              </li>
+              </Card>
             ))
         }
       </ul>

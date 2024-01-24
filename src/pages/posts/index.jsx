@@ -1,15 +1,17 @@
+import Card from "@/components/Card"
 import { getPosts } from "@/pages/api/posts"
 import { getUsers } from "@/pages/api/users"
-import styles from "@/styles/posts.module.css"
 
 export const getStaticProps = async() => {
+  const pageTitle = "Posts"
   const posts = await getPosts()
   const users = await getUsers()
   return { 
     props: { 
+      pageTitle,
       posts,
       users
-    },
+    }
   }
 }
 
@@ -24,11 +26,11 @@ export default function PostsPage({ posts, users }) {
           posts
             .filter(post => post.id <= 10)
             .map(post => (
-              <li key={post.id} className={styles.card}>
+              <Card key={post.id}>
                 <h2>{getPostAuthorName(post.userId)}</h2>
                 <h3>{post.title}</h3>
                 <p>{post.body}</p>
-              </li>
+              </Card>
             ))
         }
       </ul>
