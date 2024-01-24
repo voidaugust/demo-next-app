@@ -37,7 +37,7 @@ export default function PostPage({ post, users }) {
 
   return (
     <Card key={post.id}>
-      <h1>Post {post.id} by {getPostAuthorName(post.id)}</h1>
+      <h1>Post {post.id} by {getPostAuthorName(post.userId)}</h1>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
     </Card>
